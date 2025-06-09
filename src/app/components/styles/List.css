@@ -1,0 +1,46 @@
+.lists-main-container {
+    border: 3px solid var(--foreground);
+    border-radius: 1rem;
+    padding: 1rem 0.75rem 1rem 1rem;
+    display: flex;
+    width: 90dvw;
+    position: relative;
+}
+
+.lists-container {
+    height: 50dvh;
+    overflow: auto;
+    width: 90dvw;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-error {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.back-error:hover {
+    transition: 0.5s;
+    opacity: 75%;
+}
+
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: var(--foreground) var(--background);
+    animation: l1 1s infinite;
+}
+
+@keyframes l1 {
+    to {
+        transform: rotate(.5turn)
+    }
+}

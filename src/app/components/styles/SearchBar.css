@@ -1,0 +1,105 @@
+.container-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-bar {
+  display: flex;
+  margin: 20px 0;
+  padding-left: 4px;
+  border: 2px solid var(--foreground);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 50dvw;
+}
+
+@media screen and (max-width: 768px) {
+  .search-bar {
+    width: 80dvw;
+  }
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 0.75rem;
+  border: none;
+  background-color: var(--background);
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.search-bar input:focus {
+  transition: 0.5s;
+  border: none;
+  outline: none;
+}
+.search-bar input::placeholder {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container-search-bar button {
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-size: 12px;
+  margin-right: 6px;
+  width: 38px;
+  height: 36px;
+}
+
+.container-search-bar button:hover {
+  transition: 0.5s;
+  background-color: gray;
+}
+
+.search-icon {
+  font-size: 8px;
+}
+
+.search-child {
+  display: flex;
+  align-items: center;
+}
+
+.x-icon {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.loader-search {
+  width: 18px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: var(--foreground) var(--background);
+  animation: l1 1s infinite;
+}
+
+@keyframes l1 {
+  to {
+    transform: rotate(.5turn)
+  }
+}
+.icon {
+    transition: 0.5s;
+}
+
+.rotate {
+    transform: rotate3d(180deg);
+}
+
+.noRotate {
+    transform: rotate(0deg);
+}

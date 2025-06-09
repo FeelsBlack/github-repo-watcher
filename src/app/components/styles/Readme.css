@@ -1,0 +1,198 @@
+.readme-container {
+  position: relative;
+  height: 99dvh;
+  padding: 2rem;
+}
+
+.readme {
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border: 3px solid var(--foreground);
+  border-radius: 8px;
+  background: var(--background);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--foreground);
+  height: 85dvh;
+  overflow-x: auto;
+}
+
+.back {
+  position: sticky;
+  left: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.back:hover {
+  transition: 0.5s;
+  opacity: 75%;
+}
+
+.markdown {
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.markdown h1 {
+  font-size: 2.8em;
+  border-bottom: 1px solid rgba(var(--foreground-rgb, 0,0,0), 0.2);
+  padding-bottom: 0.5em;
+  margin-top: 0;
+}
+
+.markdown h2 {
+  font-size: 2.2em;
+  border-bottom: 1px dashed rgba(var(--foreground-rgb, 0,0,0), 0.1);
+  padding-bottom: 0.3em;
+}
+
+.markdown h3 {
+  font-size: 1.8em;
+}
+
+.markdown h4 {
+  font-size: 1.5em;
+}
+
+.markdown h5 {
+  font-size: 1.2em;
+}
+
+.markdown h6 {
+  font-size: 1em;
+  color: var(--foreground);
+}
+
+.markdown p {
+  margin-bottom: 1em;
+}
+
+.markdown a {
+  color: var(--foreground);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.markdown a:hover {
+  color: rgba(var(--foreground-rgb, 0,0,0), 0.7);
+}
+
+.markdown ul,
+.markdown ol {
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+.markdown ul li,
+.markdown ol li {
+  margin-bottom: 0.5em;
+}
+
+.markdown blockquote {
+  border-left: 4px solid var(--foreground);
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  color: var(--foreground);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.markdown code {
+  background-color: rgba(var(--foreground-rgb, 0,0,0), 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.9em;
+  color: var(--foreground);
+}
+
+.markdown pre {
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.markdown pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+  font-size: 0.9em;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid var(--foreground);
+  padding: 0.8em 1em;
+  text-align: left;
+}
+
+.markdown th {
+  background-color: rgba(var(--foreground-rgb, 0,0,0), 0.1);
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.markdown tr:nth-child(even) {
+  background-color: rgba(var(--foreground-rgb, 0,0,0), 0.05);
+}
+
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 4px;
+  border: 1px solid rgba(var(--foreground-rgb, 0,0,0), 0.1);
+}
+
+.markdown hr {
+  border: none;
+  border-top: 1px solid rgba(var(--foreground-rgb, 0,0,0), 0.2);
+  margin: 3em 0;
+}
+
+.readme {
+  max-height: 90vh;
+  scrollbar-width: thin;
+  scrollbar-color: var(--foreground) transparent;
+}
+
+.readme::-webkit-scrollbar {
+  width: 8px;
+}
+
+.readme::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.readme::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  border-radius: 4px;
+  border: 2px solid var(--background);
+}

@@ -1,0 +1,29 @@
+.iconContainer {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100%;
+    border: 1px solid var(--foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+:hover.iconContainer {
+    transition: 0.5s;
+    box-shadow: var(--foreground) 0px 5px 15px;
+}
+
+.icon {
+    height: 1.2rem;
+    width: 1.2rem;
+    transition: transform 0.5s ease;
+    transition-delay: 0.1s;
+}
+
+.rotate {
+    transform: rotate(360deg);
+}
+
+.noRotate {
+    transform: rotate(0deg);
+}
