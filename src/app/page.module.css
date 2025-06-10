@@ -15,6 +15,7 @@
   padding: 80px 80px 60px 80px;
   gap: 16px;
   font-family: var(--font-geist-sans);
+  opacity: 0;
 }
 
 .infoContainer {

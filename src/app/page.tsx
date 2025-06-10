@@ -42,8 +42,9 @@ function PageContent() {
 
   useEffect(() => {
     if (titleRef.current && titleRef.current.children.length > 0) {
+      const targets = [titleRef.current, ...Array.from(titleRef.current.children)];
       gsap.fromTo(
-        titleRef.current.children,
+        targets,
         {
           y: 50,
           opacity: 0,
