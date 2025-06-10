@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
 import "./styles/SearchBar.css";
-import { clearReadme, clearRepos } from "../store/slice";
+import { clearReadme, clearRepos, setUsername,  } from "../store/slice";
 
 interface SearchBarProps {
   onSearch: (input: string) => void;
@@ -34,6 +34,7 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
       dispatch(clearReadme());
       dispatch(clearRepos());
       setInput("");
+      dispatch(setUsername(""));
       setIsRotating(false);
     }, 600);
   };

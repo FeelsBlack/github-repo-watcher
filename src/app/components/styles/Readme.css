@@ -204,6 +204,7 @@
   max-height: 90vh;
   scrollbar-width: thin;
   scrollbar-color: var(--foreground) transparent;
+  background: inherit;
 }
 
 .readme::-webkit-scrollbar {

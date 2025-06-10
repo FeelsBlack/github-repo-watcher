@@ -1,4 +1,3 @@
-import React from "react";
 import { clearError, Repo } from "../store/slice";
 import { ListChild } from "./ListChild";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,8 +12,8 @@ interface ListsProps {
 }
 
 export const List = ({ repos, onSelect, error }: ListsProps) => {
-    const dispatch = useDispatch<AppDispatch>();
-  
+  const dispatch = useDispatch<AppDispatch>();
+
   const { loadingReadme, loadingRepos, isExistNoData } = useSelector(
     (state: RootState) => state.github
   );
@@ -34,14 +33,18 @@ export const List = ({ repos, onSelect, error }: ListsProps) => {
                 dispatch(clearError());
               }}
             />
-            <p style={{ color: "red", fontWeight: 'bold' }}>{error}</p>
+            <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>
           </div>
         ) : repos.length > 0 ? (
           repos.map((repo) => (
-            <ListChild key={repo.id} repo={repo} onSelect={onSelect} />
+            <ListChild repo={repo} key={repo.id} onSelect={onSelect} />
           ))
         ) : (
-          <div className="no-repos">{isExistNoData ? 'No Repositories in this git Username' : 'Search the user to get Repo Lists.'}</div>
+          <div className="no-repos">
+            {isExistNoData
+              ? "No Repositories in this git Username"
+              : "Search the user to get Repo Lists."}
+          </div>
         )}
       </div>
     </div>

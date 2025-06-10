@@ -44,3 +44,36 @@ a:hover {
 span {
     font-size: 14px;
 }
+
+.tooltip {
+  position: absolute;
+  background: var(--foreground);
+  color: var(--background);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition-duration: 0.2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+  z-index: 99;
+  opacity: 1;
+  transition-duration: 0.3s;
+  z-index: 9999;
+  font-size: 12px;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--foreground);
+  background-size: 1000%;
+  background-position: center;
+  transform: rotate(45deg);
+  bottom: -10%;
+  transition-duration: 0.3s;
+  z-index: 99;
+}

@@ -18,7 +18,7 @@ Super easy!
 
 1.  **Clone the repo:**
     ```bash
-    git clone [YOUR_REPO_URL_HERE]
+    git clone https://github.com/FeelsBlack/github-repo-watcher.git
     cd github-repo-watcher # (adjust folder name if needed)
     ```
 2.  **Install & Run:**
