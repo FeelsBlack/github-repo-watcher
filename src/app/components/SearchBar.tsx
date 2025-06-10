@@ -59,22 +59,28 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
               }}
             />
           )}
-          <button className="button-search">
+          <button
+            className="button-search"
+            onClick={() => {
+              if (!loadingRepos) handleSubmit();
+            }}
+          >
             {loadingRepos ? (
               <div className="loader-search" />
             ) : (
-              <Search size={18} onClick={handleSubmit} />
+              <Search size={18} />
             )}
           </button>
         </div>
       </div>
-      <button>
+      <button
+        onClick={() => {
+          clearAll();
+        }}
+      >
         <RefreshCw
           size={18}
           className={`icon ${isRotating ? "rotate" : "noRotate"}`}
-          onClick={() => {
-            clearAll();
-          }}
         />
       </button>
     </div>
