@@ -1,10 +1,11 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { CircleArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store/store";
 import "./styles/Readme.css";
 import { clearReadme } from "../store/slice";
+import { ModeToggle } from "./ModeToggle";
 
 interface ReadmeProps {
   content: string;
@@ -21,12 +22,18 @@ export const Readme = ({ content }: ReadmeProps) => {
 
   return (
     <div className="readme-container">
-      <CircleArrowLeft
-        className="back"
-        onClick={() => {
-          clear();
-        }}
-      />
+      <div className="cta-container">
+        <button
+          className="button-back"
+          onClick={() => {
+            clear();
+          }}
+        >
+          <ArrowLeft />
+        </button>
+        <ModeToggle />
+        <div style={{ width: "38px", height: "38px" }} />
+      </div>
       <div className="readme">
         <div className="markdown">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>

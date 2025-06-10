@@ -37,7 +37,7 @@ a:hover {
 }
 
 .child-container:hover {
-    background-color: gray;
+    background-color: var(--child-hover-bg);
     transition: 0.3s;
 }
 

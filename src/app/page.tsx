@@ -16,8 +16,7 @@ import { List } from "./components/List";
 import { useCallback } from "react";
 
 function PageContent() {
-  const { username, repos, readme, error } =
-    useSelector((state: RootState) => state.github);
+  const { username, repos, readme, error } = useSelector((state: RootState) => state.github);
   const dispatch = useDispatch<AppDispatch>();
 
   const handleSearch = useCallback((user: string) => {

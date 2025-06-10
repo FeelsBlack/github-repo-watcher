@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.9.0",

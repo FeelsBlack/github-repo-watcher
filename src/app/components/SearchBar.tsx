@@ -60,7 +60,7 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
             />
           )}
           <button
-            className="button-search"
+            aria-label="Search repositories" 
             onClick={() => {
               if (!loadingRepos) handleSubmit();
             }}
@@ -74,6 +74,8 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
         </div>
       </div>
       <button
+        aria-label="Clear all"
+        className="clear-all"
         onClick={() => {
           clearAll();
         }}
