@@ -3,12 +3,12 @@ import { Repo } from "../store/slice";
 import { Eye, GitFork, Stars } from "lucide-react";
 import "./styles/ListChild.css";
 
-interface RepoChildProps {
+interface ListChildProps {
   repo: Repo;
   onSelect: (repoName: string) => void;
 }
 
-export const ListChild: React.FC<RepoChildProps> = ({ repo, onSelect }) => {
+export const ListChild = ({ repo, onSelect }: ListChildProps) => {
   return (
     <div className="child-container" key={repo.id}>
       <h3

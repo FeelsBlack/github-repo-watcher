@@ -5,11 +5,11 @@ import { AppDispatch, RootState } from "../store/store";
 import "./styles/SearchBar.css";
 import { clearReadme, clearRepos } from "../store/slice";
 
-export default function SearchBar({
-  onSearch,
-}: {
+interface SearchBarProps {
   onSearch: (input: string) => void;
-}) {
+}
+
+export const SearchBar = ({ onSearch }: SearchBarProps) => {
   const loadingRepos = useSelector(
     (state: RootState) => state.github.loadingRepos
   );
@@ -59,9 +59,7 @@ export default function SearchBar({
               }}
             />
           )}
-          <button
-            className="button-search"
-          >
+          <button className="button-search">
             {loadingRepos ? (
               <div className="loader-search" />
             ) : (
@@ -81,4 +79,4 @@ export default function SearchBar({
       </button>
     </div>
   );
-}
+};

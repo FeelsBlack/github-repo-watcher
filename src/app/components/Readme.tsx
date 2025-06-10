@@ -1,4 +1,3 @@
-import React, { FC } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { CircleArrowLeft } from "lucide-react";
@@ -11,7 +10,7 @@ interface ReadmeProps {
   content: string;
 }
 
-const Readme: FC<ReadmeProps> = ({ content }) => {
+export const Readme = ({ content }: ReadmeProps) => {
   const dispatch = useDispatch<AppDispatch>();
 
   const clear = () => {
@@ -36,5 +35,3 @@ const Readme: FC<ReadmeProps> = ({ content }) => {
     </div>
   );
 };
-
-export default Readme;

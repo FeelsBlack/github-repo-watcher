@@ -18,6 +18,7 @@ interface GithubState {
   loadingRepos: boolean;
   loadingReadme: boolean;
   error: string | null;
+  isExistNoData: boolean;
 }
 
 const initialState: GithubState = {
@@ -27,6 +28,7 @@ const initialState: GithubState = {
   loadingRepos: false,
   loadingReadme: false,
   error: null,
+  isExistNoData: false,
 };
 
 export const fetchRepos = createAsyncThunk<
@@ -72,6 +74,7 @@ const slice = createSlice({
     },
     clearError(state) {
       state.error = null;
+      state.isExistNoData = false;
     },
     setUsername(state, action: PayloadAction<string>) {
       state.username = action.payload;
@@ -86,6 +89,7 @@ const slice = createSlice({
       .addCase(fetchRepos.fulfilled, (state, action) => {
         state.loadingRepos = false;
         state.repos = action.payload;
+        state.isExistNoData = action.payload.length === 0 && state.username !== "";
       })
       .addCase(fetchRepos.rejected, (state, action) => {
         state.loadingRepos = false;

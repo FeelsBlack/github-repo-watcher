@@ -29,6 +29,8 @@ Super easy!
     ```
 3.  Open your browser: `http://localhost:3000`
 
+or you can visit the live site at: `github-repo-watcher.vercel.app/` 😉
+
 ## 🎮 How to Use:
 
 1.  Type a GitHub username into the search bar.

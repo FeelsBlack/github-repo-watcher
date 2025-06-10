@@ -1,26 +1,26 @@
 import React from "react";
 import { clearError, Repo } from "../store/slice";
-import "./styles/List.css";
 import { ListChild } from "./ListChild";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
 import { CircleArrowLeft } from "lucide-react";
+import "./styles/List.css";
 
-interface RepoListProps {
+interface ListsProps {
   repos: Repo[];
   onSelect: (repoName: string) => void;
   error: string | null;
 }
 
-const Lists: React.FC<RepoListProps> = ({ repos, onSelect, error }) => {
+export const List = ({ repos, onSelect, error }: ListsProps) => {
     const dispatch = useDispatch<AppDispatch>();
   
-  const { loadingReadme, loadingRepos } = useSelector(
+  const { loadingReadme, loadingRepos, isExistNoData } = useSelector(
     (state: RootState) => state.github
   );
-console.log(repos)
+
   return (
-    <div className={repos.length >= 0 ? "lists-main-container" : ""}>
+    <div className="lists-main-container">
       <div className="lists-container">
         {loadingReadme || loadingRepos ? (
           <div>
@@ -34,18 +34,16 @@ console.log(repos)
                 dispatch(clearError());
               }}
             />
-            <p style={{ color: "red" }}>{error}</p>
+            <p style={{ color: "red", fontWeight: 'bold' }}>{error}</p>
           </div>
         ) : repos.length > 0 ? (
           repos.map((repo) => (
             <ListChild key={repo.id} repo={repo} onSelect={onSelect} />
           ))
         ) : (
-          <div className="no-repos">Search the user to get Repo Lists.</div>
+          <div className="no-repos">{isExistNoData ? 'No Repositories in this git Username' : 'Search the user to get Repo Lists.'}</div>
         )}
       </div>
     </div>
   );
 };
-
-export default Lists;

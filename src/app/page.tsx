@@ -2,7 +2,6 @@
 
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { store, RootState, AppDispatch } from "./store/store";
-import SearchBar from "./components/SearchBar";
 import styles from "./page.module.css";
 import {
   clearReadme,
@@ -10,24 +9,26 @@ import {
   fetchRepos,
   setUsername,
 } from "./store/slice";
-import Lists from "./components/List";
-import Readme from "./components/Readme";
 import { ModeToggle } from "./components/ModeToggle";
+import { Readme } from "./components/Readme";
+import { SearchBar } from "./components/SearchBar";
+import { List } from "./components/List";
+import { useCallback } from "react";
 
 function PageContent() {
   const { username, repos, readme, error } =
     useSelector((state: RootState) => state.github);
   const dispatch = useDispatch<AppDispatch>();
 
-  const handleSearch = (user: string) => {
+  const handleSearch = useCallback((user: string) => {
     dispatch(setUsername(user));
     dispatch(clearReadme());
     dispatch(fetchRepos(user));
-  };
+  }, [dispatch]);
 
-  const handleSelectRepo = (repoName: string) => {
+  const handleSelectRepo = useCallback((repoName: string) => {
     dispatch(fetchReadme({ username, repoName }));
-  };
+  }, [dispatch, username]);
 
   return readme ? (
     <Readme content={readme} />
@@ -36,7 +37,7 @@ function PageContent() {
       <h2>GitHub Repo Watcher</h2>
       <ModeToggle />
       <SearchBar onSearch={handleSearch} />
-      <Lists repos={repos} onSelect={handleSelectRepo} error={error} />
+      <List repos={repos} onSelect={handleSelectRepo} error={error} />
     </div>
   );
 }
