@@ -11,7 +11,7 @@
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
+  min-height: 100dvh;
   padding: 80px 80px 60px 80px;
   gap: 16px;
   font-family: var(--font-geist-sans);
