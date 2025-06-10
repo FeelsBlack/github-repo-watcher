@@ -18,7 +18,7 @@ export const ListChild = ({ repo, onSelect }: ListChildProps) => {
       const rect = ref.current.getBoundingClientRect();
       setTooltipPosition({
       top: rect.top + window.scrollY - 55,
-      left: rect.left + window.scrollX,
+      left: rect.left + window.scrollX + rect.width / 2,
       });
       setTooltipVisible(true);
     }

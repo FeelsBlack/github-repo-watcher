@@ -52,6 +52,7 @@ span {
   padding: 5px 10px;
   border-radius: 5px;
   display: flex;
+  transform: translateX(-50%);
   align-items: center;
   flex-direction: column;
   transition-duration: 0.2s;
