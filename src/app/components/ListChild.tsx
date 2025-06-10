@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Repo } from "../store/slice";
 import { Eye, GitFork, Stars } from "lucide-react";
 import "./styles/ListChild.css";
@@ -9,32 +9,13 @@ interface ListChildProps {
 }
 
 export const ListChild = ({ repo, onSelect }: ListChildProps) => {
-  const [tooltipVisible, setTooltipVisible] = useState(false);
-  const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
   const ref = useRef<HTMLDivElement>(null);
-
-  const handleMouseEnter = () => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setTooltipPosition({
-      top: rect.top + window.scrollY - 55,
-      left: rect.left + window.scrollX + rect.width / 2,
-      });
-      setTooltipVisible(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setTooltipVisible(false);
-  };
 
   return (
     <div
       className="child-container"
       key={repo.id}
       ref={ref}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       <h3
         onClick={(e) => {
@@ -61,20 +42,6 @@ export const ListChild = ({ repo, onSelect }: ListChildProps) => {
           {repo.stargazers_count}
         </span>
       </div>
-      {tooltipVisible && (
-        <div
-          className="tooltip"
-          style={{
-            top: tooltipPosition.top,
-            left: tooltipPosition.left,
-          }}
-        >
-          Click title to see Readme.md of:
-          <span style={{ fontWeight: "bold", marginLeft: "4px" }}>
-            {repo.name}
-          </span>
-        </div>
-      )}
     </div>
   );
 };
