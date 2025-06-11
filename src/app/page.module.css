@@ -24,9 +24,24 @@
   width: 90dvw;
   gap: 0.25rem;
   text-align: start;
-  justify-content: start;
+  justify-content: space-between;
   margin-bottom: 1rem;
   transition: 0.5s;
+}
+
+.githubIcon {
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+  border: 2px solid var(--foreground);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.githubIcon:hover {
+  background-color: var(--child-hover-bg);
 }
 
 @media (prefers-color-scheme: dark) {

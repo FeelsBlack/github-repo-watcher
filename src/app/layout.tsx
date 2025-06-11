@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Github Repo Watcher",
   description: "Where you can search Github Repos and watch their README.",
+  other: {
+    "google-site-verification": "A-tu2bi6z-J8qJKrO5k5DAeTkv5wyDb-131tka6oEyY" 
+  }
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {

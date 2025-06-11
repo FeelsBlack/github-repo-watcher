@@ -15,7 +15,7 @@ import { SearchBar } from "./components/SearchBar";
 import { List } from "./components/List";
 import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { Info } from "lucide-react";
+import { GithubIcon, Info } from "lucide-react";
 
 function PageContent() {
   const { username, repos, readme, error } = useSelector(
@@ -42,7 +42,10 @@ function PageContent() {
 
   useEffect(() => {
     if (titleRef.current && titleRef.current.children.length > 0) {
-      const targets = [titleRef.current, ...Array.from(titleRef.current.children)];
+      const targets = [
+        titleRef.current,
+        ...Array.from(titleRef.current.children),
+      ];
       gsap.fromTo(
         targets,
         {
@@ -76,8 +79,18 @@ function PageContent() {
       <SearchBar onSearch={handleSearch} />
       <div>
         <div className={styles.infoContainer}>
-          <Info size={20}/>
-          <h5>Click the repo title to see Readme.md</h5>
+          <div style={{display: "flex", alignItems: "center"}}>
+            <Info size={20} />
+            <h5 style={{marginLeft: "8px"}}>Click the repo title to see Readme.md</h5>
+          </div>
+          <a
+            href="https://github.com/FeelsBlack/github-repo-watcher"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubIcon}
+          >
+            <GithubIcon size={20} />
+          </a>
         </div>
         <List repos={repos} onSelect={handleSelectRepo} error={error} />
       </div>

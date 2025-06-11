@@ -53,3 +53,9 @@ MIT License. Free to use, free to modify.
 ## 🙏 Huge Thanks:
 
 To the GitHub API & all the open-source libraries that made this possible!
+
+### Creator
+
+**Hardi**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hardirhino-saltadho)
