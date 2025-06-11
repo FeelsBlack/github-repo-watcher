@@ -30,10 +30,7 @@
 }
 
 .githubIcon {
-  width: 32px;
-  height: 32px;
   transition: 0.3s;
-  border: 2px solid var(--foreground);
   border-radius: 50%;
   align-items: center;
   justify-content: center;
@@ -41,7 +38,7 @@
 }
 
 .githubIcon:hover {
-  background-color: var(--child-hover-bg);
+  color: hsl(221 83% 53%);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -81,13 +81,14 @@ function PageContent() {
         <div className={styles.infoContainer}>
           <div style={{display: "flex", alignItems: "center"}}>
             <Info size={20} />
-            <h5 style={{marginLeft: "8px"}}>Click the repo title to see Readme.md</h5>
+            <p style={{marginLeft: "4px", fontSize: "0.8rem", fontWeight: "bold"}}>Click the repo title to see Readme.md</p>
           </div>
           <a
             href="https://github.com/FeelsBlack/github-repo-watcher"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.githubIcon}
+            aria-label="Github"
           >
             <GithubIcon size={20} />
           </a>
